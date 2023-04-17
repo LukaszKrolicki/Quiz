@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import android.content.Intent
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
             }
             else{
                 val intent = Intent(this, QuizQuestionsActivity::class.java) //going from this activity to another
+                intent.putExtra(Constants.USER_NAME, et_name.text.toString()) //it is used to pass data to other class
                 startActivity(intent) //it will move us to other screen but not close current screen
                 finish() // we cant go back to previous screen
             }
